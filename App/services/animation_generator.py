@@ -1,12 +1,23 @@
 from pose_format.pose_visualizer import PoseVisualizer
+import tempfile
 
 
 class AnimationGenerator:
 
-    def generate(self, pose, output_path):
+    def generate(self, pose):
 
         visualizer = PoseVisualizer(pose)
 
-        visualizer.save_video(output_path, visualizer.draw())
+        temp_video = tempfile.NamedTemporaryFile(
+            suffix=".mp4",
+            delete=False
+        )
 
-        print("Video saved:", output_path)
+        temp_video.close()
+
+        visualizer.save_video(
+            temp_video.name,
+            visualizer.draw()
+        )
+
+        return temp_video.name

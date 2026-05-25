@@ -614,8 +614,8 @@
     "حفيد": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//حفيد.pose"
     },
-    "زواج": {
-        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//زواج.pose"
+    "الزواج": {
+        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//الزواج.pose"
     },
     "حمل": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//حمل.pose"
@@ -1592,8 +1592,8 @@
     "الرياضة": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//الرياضة.pose"
     },
-    "الجمباز": {
-        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//الجمباز.pose"
+    "جمباز": {
+        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//جمباز.pose"
     },
     "السباحة": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//السباحة.pose"
@@ -1901,17 +1901,8 @@
     "بدع": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//بدع.pose"
     },
-    "عذاب": {
-        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//عذاب.pose"
-    },
     "صوم رمضان": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//صوم_رمضان.pose"
-    },
-    "مدفع": {
-        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//مدفع.pose"
-    },
-    "الميت": {
-        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//الميت.pose"
     },
     "الروح": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//الروح.pose"
@@ -2516,9 +2507,6 @@
     "نوح": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//نوح.pose"
     },
-    "يوسف": {
-        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//يوسف.pose"
-    },
     "إبراهيم": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//إبراهيم.pose"
     },
@@ -2554,9 +2542,6 @@
     },
     "شارع": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//شارع.pose"
-    },
-    "مساكن": {
-        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//مساكن.pose"
     },
     "موتوسيكل": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//موتوسيكل.pose"
@@ -2636,9 +2621,6 @@
     "موقف سيارة": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//موقف_سيارة.pose"
     },
-    "مناء بحري": {
-        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//مناء_بحري.pose"
-    },
     "مهاجر": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//مهاجر.pose"
     },
@@ -2681,14 +2663,11 @@
     "قسم شرطة": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//قسم_شرطة.pose"
     },
-    "المطرية": {
-        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//المطرية.pose"
+    "مطرية": {
+        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//مطرية.pose"
     },
     "المعادي": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//المعادي.pose"
-    },
-    "المهندسين": {
-        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//المهندسين.pose"
     },
     "الوراق": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//الوراق.pose"
@@ -2698,9 +2677,6 @@
     },
     "رمسيس": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//رمسيس.pose"
-    },
-    "مصر الجديدة": {
-        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//مصر_الجديدة.pose"
     },
     "العاشر من رمضان": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//العاشر_من_رمضان.pose"
@@ -2717,11 +2693,8 @@
     "إصراف": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//إصراف.pose"
     },
-    "إفلاس": {
-        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//إفلاس.pose"
-    },
-    "اقتصاد": {
-        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//اقتصاد.pose"
+    "افلاس": {
+        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//افلاس.pose"
     },
     "السكرتير العام": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//السكرتير_العام.pose"
@@ -3033,7 +3006,7 @@
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//اولمبيات.pose"
     },
     "التضامن الاجتماعي": {
-        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//التضامن_الاجتماعي.pose"
+        "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//التضامن_الإجتماعي.pose"
     },
     "التموين": {
         "url": "https://res.cloudinary.com/ddzdrjfpb/raw/upload//التموين.pose"

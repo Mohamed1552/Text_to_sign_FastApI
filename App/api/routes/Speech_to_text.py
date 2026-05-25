@@ -1,15 +1,16 @@
 import os
 import uuid
-from config import cloudinary_config
 import cloudinary.uploader
 
+from config import cloudinary_config
 from fastapi import APIRouter, UploadFile, File
 from services.arabic_normalizer import ArabicNormalizer
 from services.pose_retriever import PoseRetriever
 from services.pose_smoother import PoseSmoother
 from services.animation_generator import AnimationGenerator
 from services.speech_to_text import SpeechToTextSR
-
+from fastapi.responses import StreamingResponse
+from io import BytesIO
 
 speech_router = APIRouter()
 
@@ -54,36 +55,20 @@ async def speech_to_text(audio: UploadFile = File(...)):
             "success": False,
             "message": "Pose stitching failed"
         }
-
-    # ==============================
-    # Create unique filenames
-    # ==============================
-
-    unique_id = str(uuid.uuid4())
-
-    output_dir = "static\output"
-    os.makedirs(output_dir, exist_ok=True)
-
-    pose_output = os.path.join(
-        output_dir,
-        f"{unique_id}.pose"
-    )
-
-    video_output = os.path.join(
-        output_dir,
-        f"{unique_id}.mp4"
+    
+    video_output = animator.generate(
+    stitched_pose
     )
     
 
-    # ==============================
-    # Save pose
-    # ==============================
+    buffer = BytesIO()
 
-    with open(pose_output, "wb") as f:
-        stitched_pose.write(f)
+    stitched_pose.write(buffer)
+
+    buffer.seek(0)
     
     result = cloudinary.uploader.upload(
-        pose_output,
+        buffer,
         resource_type = "raw",
         folder = "generated_pose",
         use_filename = True,
@@ -91,18 +76,23 @@ async def speech_to_text(audio: UploadFile = File(...)):
     )
     
     generated_pose_url = result["secure_url"]
-    # ==============================
-    # Generate video
-    # ==============================
+    
+    def iterfile():
 
-    animator.generate(stitched_pose, video_output)
+        with open(video_output, "rb") as f:
+
+            while chunk := f.read(1024 * 1024):
+                yield chunk
+
+        os.remove(video_output)
     
     print("Uploaded:", generated_pose_url)
 
-    return {
-        "success": True,
-        "pose_file": pose_output,
-        "video_file": video_output,
-        "pose_URL": generated_pose_url,
-        "tokens": tokens
+    
+    return StreamingResponse(
+    iterfile(),
+    media_type="video/mp4",
+    headers={
+        "X-Pose-URL": generated_pose_url
     }
+)

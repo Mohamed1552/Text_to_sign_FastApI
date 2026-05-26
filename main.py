@@ -1,5 +1,6 @@
 import os
-from fastapi import FastAPI, Request, HTTPException
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from api.routes.text_to_sign import text_router
 from api.routes.Speech_to_text import speech_router
@@ -17,7 +18,6 @@ API_KEY = os.getenv("API_KEY")
 async def api_key_middleware(request: Request, call_next):
     path = request.url.path
 
-    # Public routes - no API key needed
     public_paths = [
         "/",
         "/docs",
@@ -25,26 +25,27 @@ async def api_key_middleware(request: Request, call_next):
         "/redoc",
     ]
 
-    # Allow docs, static files, and root without API key
-    if (
-        path in public_paths
-        or path.startswith("/static")
-    ):
+    if path in public_paths or path.startswith("/static"):
         return await call_next(request)
 
-    # Protect all other routes
     client_api_key = request.headers.get("x-api-key")
 
     if not API_KEY:
-        raise HTTPException(
+        return JSONResponse(
             status_code=500,
-            detail="Server API_KEY is not configured"
+            content={
+                "success": False,
+                "message": "Server API_KEY is not configured"
+            }
         )
 
     if client_api_key != API_KEY:
-        raise HTTPException(
+        return JSONResponse(
             status_code=401,
-            detail="Invalid or missing API key"
+            content={
+                "success": False,
+                "message": "Invalid or missing API key"
+            }
         )
 
     return await call_next(request)

@@ -72,7 +72,8 @@ async def speech_to_text(audio: UploadFile = File(...)):
         resource_type = "raw",
         folder = "generated_pose",
         use_filename = True,
-        unique_filename = True
+        unique_filename = True,
+        format="pose"
     )
     
     generated_pose_url = result["secure_url"]

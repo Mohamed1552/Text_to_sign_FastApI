@@ -2,6 +2,7 @@ import os
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 from api.routes.text_to_sign import text_router
 from api.routes.Speech_to_text import speech_router
 
@@ -9,6 +10,16 @@ app = FastAPI(
     title="Text To Sign API",
     description="API for converting Arabic text/speech to sign language outputs.",
     version="1.0.0"
+)
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Replace with your frontend domain in production.
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+    expose_headers=["X-Pose-URL"],
 )
 
 API_KEY = os.getenv("API_KEY")

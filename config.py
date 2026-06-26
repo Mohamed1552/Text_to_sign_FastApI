@@ -1,7 +1,12 @@
 from pathlib import Path
 import json
 import torch
+import os
+from dotenv import load_dotenv
 
+
+load_dotenv()
+POSE_KEY = os.getenv("POSE_KEY")
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_DIR = BASE_DIR / "models"
 TEMP_DIR = BASE_DIR / "temp"

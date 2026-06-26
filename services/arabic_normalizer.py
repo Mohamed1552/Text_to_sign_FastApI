@@ -2,6 +2,7 @@ import os
 import re
 import json
 import requests
+from pose_loader import PoseLoader
 from dotenv import load_dotenv
 from rapidfuzz import process, fuzz
 
@@ -224,8 +225,8 @@ class ArabicNormalizer:
             "Content-Type": "application/json"
         }
 
-        with open("poses.json", "r", encoding="utf-8") as f:
-            pose_db = json.load(f)
+        loader = PoseLoader()
+        pose_db = loader.get()
 
         self.pose_db = set(pose_db.keys())
 
